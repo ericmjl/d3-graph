@@ -13,13 +13,13 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("data.json", function (error, graph) {
+d3.json("er-graph.json", function (error, graph) {
     if (error) throw error;
 
     var link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
-        .data(graph.edges)
+        .data(graph.links)
         .enter().append("line")
         .attr("stroke-width", function (d) { return Math.sqrt(d.value); });
 
@@ -46,7 +46,7 @@ d3.json("data.json", function (error, graph) {
         .on("tick", ticked);
 
     simulation.force("link")
-        .links(graph.edges);
+        .links(graph.links);
 
     function ticked() {
         link

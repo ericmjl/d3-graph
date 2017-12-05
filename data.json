@@ -19,7 +19,7 @@
         "group": 2,
         "interests": ["subject1", "subject2"]
     }],
- "edges": [
+ "links": [
      {
         "source": "person1",
         "target": "person2",
