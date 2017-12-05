@@ -92,6 +92,7 @@ function handleMouseOver(d) {  // Add interactivity
         .attr("x", function () { return d.x + node_radius * 1.5; })
         .attr("y", function () { return d.y + node_radius * 1.5; })
         .attr("font-family", "Arial")
+        .attr("font-size", "22")
         .text(displayInterests(d))
 }
 
